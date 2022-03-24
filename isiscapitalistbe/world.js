@@ -1,7 +1,7 @@
 module.exports = {
-  name: "Nom du monde",
+  name: "O Breizh, ma Bro",
   logo: "icones/logomonde.jpg",
-  money: 0,
+  money: 1000,
   score: 0,
   totalangels: 0,
   activeangels: 0,
@@ -10,7 +10,7 @@ module.exports = {
   products: [
     {
       id: 1,
-      name: "premier produit",
+      name: "Beurre",
       logo: "icones/premierproduit.jpg",
       cout: 4,
       croissance: 1.07,
