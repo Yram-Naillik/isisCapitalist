@@ -25,7 +25,6 @@ module.exports = {
   Mutation: {
     acheterQtProduit(parent, args, context) {
       // Update world (TODO later)
-      console.log("Argent de base : " + context.world.money);
 
       // Recover arguments
       quantity = args.quantite;
@@ -43,12 +42,36 @@ module.exports = {
         product.quantite = product.quantite + quantity;
 
         // Saving world & returning updated object
-        console.log(JSON.stringify(context.world));
         saveWorld(context);
         return product;
       }
     },
-    lancerProductionProduit(id) {},
-    engagerManager(name) {},
+    lancerProductionProduit(parent, args, context) {},
+    engagerManager(parent, args, context) {
+      // Update (TODO later)
+
+      // Recover arguments
+      name = args.name;
+
+      // Unlock manager, and set unlocked to the corresponding product
+      const manager = context.world.managers.find(
+        (manager) => manager.name === name
+      );
+      if (!manager) {
+        throw new Error("Le manager n'existe pas");
+      } else {
+        manager.unlocked = true;
+
+        const correspondingProduction = context.world.products.find(
+          (product) => product.id === manager.idcible
+        );
+
+        correspondingProduction.managerUnlocked = true;
+
+        // Saving world & returning updated object
+        saveWorld(context);
+        return product;
+      }
+    },
   },
 };
