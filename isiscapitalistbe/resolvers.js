@@ -1,5 +1,9 @@
 var fs = require("fs");
 
+/**
+ * Saves the current state of the world
+ * @param {*} context
+ */
 function saveWorld(context) {
   fs.writeFile(
     "userworlds/" + context.user + "-world.json",
@@ -13,12 +17,32 @@ function saveWorld(context) {
   );
 }
 
+/**
+ *
+ * @param {*} context
+ * @returns elapsed time since lastUpdate of the world
+ */
+function elapsedTime(context) {
+  // Get last update value
+  lastUpdateString = context.world.lastUpdate;
+  lastUpdateInt = parseInt(lastUpdateString);
+
+  // Get current date value
+  currentDate = Date.now();
+
+  // Calculate elapsed time since last update
+  elapsedTime = currentDate - lastUpdateInt;
+  console.log(elapsedTime);
+
+  return elapsedTime;
+}
+
 module.exports = {
   Query: {
     getWorld(parent, args, context) {
+      elapsedTime(context);
       saveWorld(context);
-      console.log(JSON.stringify(context.world));
-
+      //console.log(JSON.stringify(context.world));
       return context.world;
     },
   },
@@ -70,7 +94,7 @@ module.exports = {
 
         // Saving world & returning updated object
         saveWorld(context);
-        return product;
+        return manager;
       }
     },
   },

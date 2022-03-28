@@ -9,8 +9,7 @@ let fs = require("fs");
 async function readUserWorld(user) {
   try {
     const data = fs.readFileSync("userworlds/" + user + "-world.json");
-    console.log("*********************************************");
-    console.log(JSON.parse(data));
+    //console.log(JSON.parse(data));
     return JSON.parse(data);
   } catch (error) {
     console.log(error);
