@@ -70,16 +70,36 @@ module.exports = {
         return product;
       }
     },
-    lancerProductionProduit(parent, args, context) {},
+    lancerProductionProduit(parent, args, context) {
+      // Upadte (TODO later)
+      // Recover arguments
+      id = args.id;
+
+      // Assign vitesse value to timeleft
+      const product = context.world.products.find(
+        (product) => product.id === id
+      );
+      if (!product) {
+        throw new Error("Le produit n'existe pas");
+      } else {
+        product.timeleft = product.vitesse;
+
+        // Saving world & returning updated object
+        saveWorld(context);
+        return product;
+      }
+
+      // Assign Date.now() value to lastUpdate
+    },
     engagerManager(parent, args, context) {
       // Update (TODO later)
 
       // Recover arguments
-      name = args.name;
+      managerName = args.name;
 
       // Unlock manager, and set unlocked to the corresponding product
       const manager = context.world.managers.find(
-        (manager) => manager.name === name
+        (manager) => manager.name === managerName
       );
       if (!manager) {
         throw new Error("Le manager n'existe pas");
