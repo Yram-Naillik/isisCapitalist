@@ -1,63 +1,119 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { gql, useQuery } from '@apollo/client';
+import React, { useState } from "react";
+import "./App.css";
+import Main from "./Main";
+import { gql, useQuery } from "@apollo/client";
 
 const GET_WORLD = gql`
-query GetWorld {
-  getWorld {
-    name
+  query Query {
+    getWorld {
+      logo
+      name
+      money
+      score
+      totalangels
+      activeangels
+      angelbonus
+      lastupdate
+      products {
+        timeleft
+        id
+        name
+        logo
+        cout
+        croissance
+        revenu
+        vitesse
+        quantite
+        managerUnlocked
+        paliers {
+          name
+          logo
+          seuil
+          idcible
+          ratio
+          typeratio
+          unlocked
+        }
+      }
+      allunlocks {
+        name
+        logo
+        seuil
+        idcible
+        ratio
+        typeratio
+        unlocked
+      }
+      upgrades {
+        name
+        logo
+        seuil
+        idcible
+        ratio
+        typeratio
+        unlocked
+      }
+      angelupgrades {
+        name
+        logo
+        seuil
+        idcible
+        ratio
+        typeratio
+        unlocked
+      }
+      managers {
+        name
+        logo
+        seuil
+        idcible
+        ratio
+        typeratio
+        unlocked
+      }
+    }
   }
-}
-`
+`;
 
 let username = localStorage.getItem("username");
 
-
 function onUserNameChanged() {
-  if (typeof username != 'undefined' && username) {
-    localStorage.setItem("username", username)
-  }
-  else {
-    localStorage.setItem("username", "breton" + Math.floor(Math.random() * 1000))
+  if (typeof username != "undefined" && username) {
+    localStorage.setItem("username", username);
+  } else {
+    localStorage.setItem(
+      "username",
+      "breton" + Math.floor(Math.random() * 1000)
+    );
   }
 }
 
 function App() {
   const [username, setUsername] = useState("");
   const { loading, error, data, refetch } = useQuery(GET_WORLD, {
-    context: { headers: { "x-user": username } }
+    context: { headers: { "x-user": username } },
   });
 
-  let corps = undefined
-  if (loading) corps = <div> Loading... </div>
-  else if (error) corps = <div> Erreur de chargement du monde ! </div>
-  else corps = <div> {data.getWorld.name} </div>
+  let corps = undefined;
+  if (loading) corps = <div> Loading... </div>;
+  else if (error) {
+    corps = <div> Erreur de chargement du monde ! </div>;
+    console.log(error);
+  } else
+    corps = (
+      <div>
+        <Main loadworld={data.getWorld} username={username} />
+      </div>
+    );
 
   return (
     <div className="App">
-
-      <div className="header">
-
-        <div> logo monde </div>
-        <div> argent </div>
-        <div> multiplicateur </div>
-        <div> <div>ID :</div>
-          <input type="text" value={username} onChange={onUserNameChanged} />
-          {corps}
-        </div>
+      <div>
+        {" "}
+        <div>ID :</div>
+        <input type="text" value={username} onChange={onUserNameChanged} />
       </div>
-      <div className="main">
-        <div> liste des boutons de menu </div>
-        <div className="product">
-          <div> premier produit </div>
-          <div> second produit </div>
-          <div> troisième produit </div>
-          <div> quatrième produit </div>
-          <div> cinquième produit </div>
-          <div> sixième produit </div>
-        </div>
-      </div>
+      <div>{corps}</div>
     </div>
   );
 }
