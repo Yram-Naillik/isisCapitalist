@@ -75,8 +75,10 @@ const GET_WORLD = gql`
   }
 `;
 
+{/*stockage du pseudo*/}
 let username = localStorage.getItem("username");
 
+{/*fonction pour maj l etat quand l utilisateur saisi un nouveau pseudo*/}
 function onUserNameChanged() {
   if (typeof username != "undefined" && username) {
     localStorage.setItem("username", username);
@@ -89,11 +91,16 @@ function onUserNameChanged() {
 }
 
 function App() {
+  {/*champ texte pour specifier le pseudo*/}
   const [username, setUsername] = useState("");
+  {/*requete graphql pour recuperation des 4 variables, parametre nom du joueur pour 
+  bien retourner les infos de son monde*/}
   const { loading, error, data, refetch } = useQuery(GET_WORLD, {
     context: { headers: { "x-user": username } },
   });
 
+  {/*test de la var loading, si true = chargement*
+   puis test de la var error, si false = acces au monde*/}
   let corps = undefined;
   if (loading) corps = <div> Loading... </div>;
   else if (error) {
@@ -109,9 +116,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        {" "}
         <div>ID :</div>
-        <input type="text" value={username} onChange={onUserNameChanged} />
+        <input value={username} onChange={onUserNameChanged} ></input>
       </div>
       <div>{corps}</div>
     </div>

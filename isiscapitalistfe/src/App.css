@@ -11,6 +11,14 @@
   grid-template-columns: 1fr 1fr;
 }
 
+/** pour mettre des images dans des cercles */
+.round {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%
+ }
+ 
+
 /** Buttons **/
 
 *,
