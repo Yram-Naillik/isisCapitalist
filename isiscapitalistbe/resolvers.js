@@ -71,7 +71,7 @@ module.exports = {
       }
     },
     lancerProductionProduit(parent, args, context) {
-      // Upadte (TODO later)
+      // Update (TODO later)
       // Recover arguments
       id = args.id;
 
