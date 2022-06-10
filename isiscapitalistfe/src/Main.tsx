@@ -17,11 +17,13 @@ export default function Main({ loadworld, username }: MainProps) {
   
   return (
     <div>
+      {/*bandeau de titre : divisé en 4 cases de tailles égales*/}
       <div className="header">
-      {/* ligne de code pour affichage du logo du monde à modifier selon nos paramètres  
-      <img src="http://localhost:4000" + world.logo} /> */}
-      <span>{world.name}</span>
-      <span>{world.money}</span>
+      <img className ="round logomonde" src={"http://localhost:4000/"+world.logo} />
+      <div>{world.name}</div>
+      <div>{world.money}
+            <p> Buzuk </p>
+      </div>
       </div>
       {/*il faut mettre la classe header ici cf page 20 du sujet */}
       <div className="main">
@@ -42,7 +44,7 @@ export default function Main({ loadworld, username }: MainProps) {
             <div>Investors</div>
           </button>
         </div>
-        <div className="product">
+        <div className="productlist">
           <div>
             <ProductComponent prod={world.products[0]} />
           </div>
