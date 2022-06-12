@@ -1,1 +1,293 @@
-{"name":"O Breizh, ma Bro","logo":"icones/logomonde.jpg","money":1000,"score":0,"totalangels":0,"activeangels":0,"angelbonus":2,"lastupdate":0,"products":[{"id":1,"name":"Beurre","logo":"icones/premierproduit.jpg","cout":4,"croissance":1.07,"revenu":1,"vitesse":500,"quantite":1,"timeleft":0,"managerUnlocked":false,"palliers":[{"name":"Nom du premier palier","logo":"icones/premierpalier.jpg","seuil":20,"idcible":1,"ratio":2,"typeratio":"vitesse","unlocked":false},{"name":"Nom deuxième palier","logo":"icones/deuxiemepalier.jpg","seuil":75,"idcible":1,"ratio":2,"typeratio":"vitesse","unlocked":false}]},{"id":2,"name":"Deuxième produit","logo":"icones/deuxiemeproduit.jpg"}],"allunlocks":[{"name":"Nom du premier unlock général","logo":"icones/premierunlock.jpg","seuil":30,"idcible":0,"ratio":2,"typeratio":"gain","unlocked":false}],"upgrades":[{"name":"Nom du premier upgrade","logo":"icones/premierupgrade.jpg","seuil":1000,"idcible":1,"ratio":3,"typeratio":"gain","unlocked":false}],"angelupgrades":[{"name":"Angel Sacrifice","logo":"icones/angel.png","seuil":10,"idcible":0,"ratio":3,"typeratio":"gain","unlocked":false}],"managers":[{"name":"Wangari Maathai","logo":"icones/WangariMaathai.jpg","seuil":10,"idcible":1,"ratio":0,"typeratio":"gain","unlocked":false}]}
+{
+  "name": "O Breizh, ma Bro",
+  "logo": "icones/triskell.svg",
+  "money": 1000,
+  "score": 0,
+  "totalangels": 0,
+  "activeangels": 0,
+  "angelbonus": 2,
+  "lastupdate": 0,
+  "products": [
+    {
+      "id": 1,
+      "name": "Beurre",
+      "logo": "icones/products/butter128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Crepe",
+      "logo": "icones/products/crepe128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pate Henaff",
+      "logo": "icones/products/henaff128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ciré",
+      "logo": "icones/products/raincoat128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Voilier",
+      "logo": "icones/products/boat128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Stade Brestois",
+      "logo": "icones/products/sb128.png",
+      "cout": 4,
+      "croissance": 1.07,
+      "revenu": 1,
+      "vitesse": 500,
+      "quantite": 1,
+      "timeleft": 0,
+      "managerUnlocked": false,
+      "palliers": [
+        {
+          "name": "Nom du premier palier",
+          "logo": "icones/premierpalier.jpg",
+          "seuil": 20,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        },
+        {
+          "name": "Nom deuxième palier",
+          "logo": "icones/deuxiemepalier.jpg",
+          "seuil": 75,
+          "idcible": 1,
+          "ratio": 2,
+          "typeratio": "vitesse",
+          "unlocked": false
+        }
+      ]
+    }
+  ],
+  "allunlocks": [
+    {
+      "name": "Nom du premier unlock général",
+      "logo": "icones/premierunlock.jpg",
+      "seuil": 30,
+      "idcible": 0,
+      "ratio": 2,
+      "typeratio": "gain",
+      "unlocked": false
+    }
+  ],
+  "upgrades": [
+    {
+      "name": "Nom du premier upgrade",
+      "logo": "icones/premierupgrade.jpg",
+      "seuil": 1000,
+      "idcible": 1,
+      "ratio": 3,
+      "typeratio": "gain",
+      "unlocked": false
+    }
+  ],
+  "angelupgrades": [
+    {
+      "name": "Angel Sacrifice",
+      "logo": "icones/angel.png",
+      "seuil": 10,
+      "idcible": 0,
+      "ratio": 3,
+      "typeratio": "gain",
+      "unlocked": false
+    }
+  ],
+  "managers": [
+    {
+      "name": "Michel Edouard Leclerc",
+      "logo": "icones/managers/mel.jpg",
+      "seuil": 10,
+      "idcible": 1,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    },
+    {
+      "name": "Gang de bigoudens",
+      "logo": "icones/managers/bigouden.jpg",
+      "seuil": 10,
+      "idcible": 2,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    },
+    {
+      "name": "Jean-Jacques Hennaf",
+      "logo": "icones/managers/jjh.jpg",
+      "seuil": 10,
+      "idcible": 3,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    },
+    {
+      "name": "Guy Cotten",
+      "logo": "icones/managers/guy.jpg",
+      "seuil": 10,
+      "idcible": 4,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    },
+    {
+      "name": "Olivier de Kersauson",
+      "logo": "icones/managers/odk.jpg",
+      "seuil": 10,
+      "idcible": 5,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    },
+    {
+      "name": "Denis Le Saint",
+      "logo": "icones/managers/dls.jpg",
+      "seuil": 10,
+      "idcible": 6,
+      "ratio": 0,
+      "typeratio": "gain",
+      "unlocked": false
+    }
+  ]
+}

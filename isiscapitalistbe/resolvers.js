@@ -42,7 +42,6 @@ module.exports = {
     getWorld(parent, args, context) {
       elapsedTime(context);
       saveWorld(context);
-      //console.log(JSON.stringify(context.world));
       return context.world;
     },
   },
