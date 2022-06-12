@@ -83,12 +83,13 @@ module.exports = {
       } else {
         product.timeleft = product.vitesse;
 
-        // Saving world & returning updated object
+        // Saving world
         saveWorld(context);
+        // Assign Date.now() value to lastUpdate
+        context.world.lastUpdate = Date.now().toString();
+
         return product;
       }
-
-      // Assign Date.now() value to lastUpdate
     },
     engagerManager(parent, args, context) {
       // Update (TODO later)
@@ -116,5 +117,8 @@ module.exports = {
         return manager;
       }
     },
+    acheterCashUpgrade(parent, args, context) {},
+    acheterAngelUpgrade(parent, args, context) {},
+    resetWorld(parent, args, context) {},
   },
 };
