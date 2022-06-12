@@ -1,20 +1,23 @@
 .header {
   display: grid;
   grid-template-columns: 25% 25% 30% 20%;
-  background-color: coral;
+  background-color: #BBDB9B;
   justify-content: center;
   align-items: center;
-  font-size:2em;
+  font-size: 2em;
   margin-bottom: 10px;
   padding-left: 10px;
 }
+
 .main {
   display: grid;
   grid-template-columns: 20% 80%;
 }
+
 .product {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 10px;
 }
 
 /*pour mettre des images dans des cercles */
@@ -23,16 +26,51 @@
   height: 150px;
   border-radius: 50%;
   border: 3px solid black;
- }
+}
 
- .logomonde {
+.logomonde {
   max-width: 50px;
   max-height: 50px;
- }
- 
- .product{
-  border: 3px solid black;
- }
+}
+
+.roundprod {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.logoprod {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.product {
+  border: 1px solid gray;
+  justify-content: left;
+  max-width: 400px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.lesdeux {
+  position: relative;
+}
+
+.lesecond {
+  position: absolute;
+  bottom: -10px;
+}
+
+.quantite {
+  width: 45px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #C4A69D;
+  justify-content: center;
+  text-align: center;
+}
+
 
 /** Buttons **/
 
@@ -53,6 +91,7 @@ a:hover {
 button:hover {
   cursor: pointer;
 }
+
 button {
   background: transparent;
   outline: none;
@@ -68,6 +107,7 @@ button:hover:before {
   opacity: 1;
   transform: translate(0, 0);
 }
+
 button:before {
   content: attr(data-hover);
   position: absolute;
@@ -82,11 +122,13 @@ button:before {
   transform: translate(-100%, 0);
   transition: all 0.3s ease-in-out;
 }
+
 /*button div (button text before hover)*/
 button:hover div {
   opacity: 0;
   transform: translate(100%, 0);
 }
+
 button div {
   text-transform: uppercase;
   letter-spacing: 1px;

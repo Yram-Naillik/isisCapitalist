@@ -3,6 +3,7 @@ import "./App.css";
 import "./ProductComponent";
 import ProductComponent from "./ProductComponent";
 import { World, Product } from "./world";
+// import {transform} from "./utils";
 
 type MainProps = {
   loadworld: World;
@@ -23,9 +24,10 @@ export default function Main({ loadworld, username }: MainProps) {
       <div>{world.name}</div>
       <div>{world.money}
             <p> Buzuk </p>
+      </div> 
+      {/* <span> dangerouslySetInnerHTML={{__html: transform(world.money)}}</span> */}
       </div>
-      </div>
-      {/*il faut mettre la classe header ici cf page 20 du sujet */}
+
       <div className="main">
         <div>
           <button data-hover="click me!">
@@ -49,19 +51,19 @@ export default function Main({ loadworld, username }: MainProps) {
             <ProductComponent prod={world.products[0]} />
           </div>
           <div>
-            <ProductComponent prod={world.products[0]} />
+            <ProductComponent prod={world.products[1]} />
           </div>
           <div>
-            <ProductComponent prod={world.products[0]} />
+            <ProductComponent prod={world.products[2]} />
           </div>
           <div>
-            <ProductComponent prod={world.products[0]} />
+            <ProductComponent prod={world.products[3]} />
           </div>
           <div>
-            <ProductComponent prod={world.products[0]} />
+            <ProductComponent prod={world.products[4]} />
           </div>
           <div>
-            <ProductComponent prod={world.products[0]} />
+            <ProductComponent prod={world.products[5]} />
           </div>
         </div>
       </div>
