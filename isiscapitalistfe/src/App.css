@@ -1,12 +1,31 @@
 .header {
   display: grid;
-  grid-template-columns: 25% 25% 30% 20%;
-  background-color: #BBDB9B;
+  grid-template-columns: 20% 40% 20% 20%;
+  background-color: #0e1116;
+
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 3em;
   margin-bottom: 10px;
   padding-left: 10px;
+}
+.header p {
+  color: white;
+}
+.header span {
+  color: white;
+}
+
+.header sup {
+  color: white;
+}
+
+.money {
+  font-size: 0.7em;
+}
+
+.multiplicatorbutton {
+  font-size: 0.7em;
 }
 
 .main {
@@ -22,66 +41,130 @@
 
 /*pour mettre des images dans des cercles */
 .round {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 .logomonde {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 10px;
 }
 
+.id {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  background-color: #0e1116;
+  color: white;
+}
+
+/** PRODUCT COMPONENT **/
+.productlist {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.productlistleft {
+  width: 50%;
+}
+
+.productlistright {
+  width: 50%;
+}
 .roundprod {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #0e1116;
 }
 
 .logoprod {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 128px;
+  max-height: 128px;
 }
 
-.product {
+.productComponent {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 20% 80%;
   border: 1px solid gray;
-  justify-content: left;
-  max-width: 400px;
-  height: 50px;
   border-radius: 10px;
 }
 
-.lesdeux {
-  position: relative;
+.leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
-.lesecond {
-  position: absolute;
-  bottom: -10px;
+.rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.time {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
 }
 
 .quantite {
-  width: 45px;
+  width: 100px;
   height: 20px;
-  border-radius: 50%;
-  background-color: #C4A69D;
+  border-radius: 10px;
+  background-color: #0e1116;
   justify-content: center;
   text-align: center;
 }
 
+.quantite p {
+  color: white;
+}
+
+.barstyle {
+  background-color: #0e1116;
+  height: 25px;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.producttitle {
+  font-size: 2em;
+}
 
 /** Buttons **/
+.menubuttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 *,
 *:before,
 *:after {
   padding: 0;
   margin: 0;
-  font: 300 1em/1.5 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "MedievalSharp", cursive;
   text-decoration: none;
-  color: #111;
+  color: #0e1116;
 }
 
 a:hover {
@@ -93,13 +176,15 @@ button:hover {
 }
 
 button {
+  margin: 2px;
   background: transparent;
   outline: none;
-  position: relative;
   border: 2px solid #111;
   padding: 15px 50px;
   overflow: hidden;
-  width: 200px;
+  position: relative;
+  font-weight: 800;
+  width: 80%;
 }
 
 /*button:before (attr data-hover)*/
@@ -116,8 +201,7 @@ button:before {
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-weight: 800;
-  font-size: 0.8em;
+  font-size: 1.5em;
   opacity: 0;
   transform: translate(-100%, 0);
   transition: all 0.3s ease-in-out;
@@ -133,6 +217,6 @@ button div {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 800;
-  font-size: 0.8em;
+  font-size: 1.5em;
   transition: all 0.3s ease-in-out;
 }
