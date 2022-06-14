@@ -126,7 +126,8 @@ function App() {
   return (
     <div className="App">
       <div className="id">
-        ID :<input value={username} onChange={onUserNameChanged}></input>
+        ID : &nbsp;{" "}
+        <input value={username} onChange={onUserNameChanged}></input>
       </div>
       <div>{corps}</div>
     </div>
