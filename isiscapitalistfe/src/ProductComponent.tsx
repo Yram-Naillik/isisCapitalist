@@ -7,14 +7,39 @@ import MyProgressbar from "./MyProgressBar";
 
 type ProductProps = {
   prod: Product;
+  qtMultiplicator: String;
+  money: number;
 };
 
-/* il manque la propriété services*/
-
-export default function ProductComponent({ prod }: ProductProps) {
+export default function ProductComponent({
+  prod,
+  qtMultiplicator,
+  money,
+}: ProductProps) {
   const [product, setProduct] = useState(
     JSON.parse(JSON.stringify(prod)) as Product
   );
+  const [multiplicator, setQtMultiplicator] = useState(
+    JSON.parse(JSON.stringify(qtMultiplicator)) as String
+  );
+
+  //const [buyPrice, setBuyPrice] = useState(0);
+  let buyPrice = 0;
+
+  function calcMaxCanBuy() {
+    if (qtMultiplicator == "MAX") {
+      console.log("max");
+    } else {
+      console.log("else");
+      let multiplicatorToNumber = Number(qtMultiplicator);
+      let q = prod.croissance;
+      let initialCost = prod.cout;
+      buyPrice =
+        initialCost * ((1 - Math.pow(q, multiplicatorToNumber)) / (1 - q));
+    }
+  }
+
+  calcMaxCanBuy();
 
   return (
     <div className="productComponent">
@@ -35,6 +60,8 @@ export default function ProductComponent({ prod }: ProductProps) {
         <div className="producttitle">{prod.name}</div>
         <div className="time">
           <MyProgressbar
+            frontcolor="green"
+            backcolor="yellow"
             className="barstyle"
             vitesse={product.vitesse}
             initialvalue={product.vitesse - product.timeleft}
@@ -45,8 +72,10 @@ export default function ProductComponent({ prod }: ProductProps) {
           <div className="timeleft">{product.timeleft}</div>
         </div>
         <div className="label">
-          <div className="multiplicator">x1</div>
-          <div className="buyable">10 buzuk</div>
+          <div className="multiplicator" onChange={calcMaxCanBuy}>
+            x{qtMultiplicator}
+          </div>
+          <div className="buyable">{buyPrice} buzuk</div>
         </div>
       </div>
     </div>

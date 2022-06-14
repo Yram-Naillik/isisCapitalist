@@ -14,7 +14,30 @@ export default function Main({ loadworld, username }: MainProps) {
   const [world, setWorld] = useState(
     JSON.parse(JSON.stringify(loadworld)) as World
   );
+
   let score = transform(world.money);
+  const [qtMultiplicator, setQtMultiplicator] = useState("1");
+
+  function changeMultiplicator() {
+    switch (qtMultiplicator) {
+      case "1":
+        setQtMultiplicator("10");
+        console.log(qtMultiplicator);
+        break;
+      case "10":
+        setQtMultiplicator("100");
+        console.log(qtMultiplicator);
+        break;
+      case "100":
+        setQtMultiplicator("MAX");
+        console.log(qtMultiplicator);
+        break;
+      case "MAX":
+        setQtMultiplicator("1");
+        console.log(qtMultiplicator);
+        break;
+    }
+  }
 
   return (
     <div>
@@ -32,8 +55,8 @@ export default function Main({ loadworld, username }: MainProps) {
           &nbsp; Buzuk
         </p>
         <div>
-          <button className="multiplicatorbutton">
-            <p>x1</p>
+          <button className="multiplicatorbutton" onClick={changeMultiplicator}>
+            <p className="multiplicatorvalue">x{qtMultiplicator}</p>
           </button>
         </div>
       </div>
@@ -59,24 +82,48 @@ export default function Main({ loadworld, username }: MainProps) {
         <div className="productlist">
           <div className="productlistleft">
             <div>
-              <ProductComponent prod={world.products[0]} />
+              <ProductComponent
+                prod={world.products[0]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
             <div>
-              <ProductComponent prod={world.products[1]} />
+              <ProductComponent
+                prod={world.products[1]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
             <div>
-              <ProductComponent prod={world.products[2]} />
+              <ProductComponent
+                prod={world.products[2]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
           </div>
           <div className="productlistright">
             <div>
-              <ProductComponent prod={world.products[3]} />
+              <ProductComponent
+                prod={world.products[3]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
             <div>
-              <ProductComponent prod={world.products[4]} />
+              <ProductComponent
+                prod={world.products[4]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
             <div>
-              <ProductComponent prod={world.products[5]} />
+              <ProductComponent
+                prod={world.products[5]}
+                qtMultiplicator={qtMultiplicator}
+                money={world.money}
+              />
             </div>
           </div>
         </div>
