@@ -220,3 +220,32 @@ button div {
   font-size: 1.5em;
   transition: all 0.3s ease-in-out;
 }
+
+/*** MODALS ***/
+
+.modal {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin-top: 100px;
+  overflow: auto;
+}
+
+.managersComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px;
+}
+
+.modalTitle {
+  margin-bottom: 30px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.managersList {
+  display: flex;
+  flex-direction: row;
+}

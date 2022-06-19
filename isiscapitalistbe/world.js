@@ -42,7 +42,7 @@ module.exports = {
     },
     {
       id: 2,
-      name: "Crepe",
+      name: "Crêpe",
       logo: "icones/products/crepe128.png",
       cout: 60,
       croissance: 1.15,
@@ -74,7 +74,7 @@ module.exports = {
     },
     {
       id: 3,
-      name: "Pate Henaff",
+      name: "Paté Hénaff",
       logo: "icones/products/henaff128.png",
       cout: 720,
       croissance: 1.14,
@@ -237,8 +237,8 @@ module.exports = {
   managers: [
     {
       name: "Michel Edouard Leclerc",
-      logo: "icones/managers/mel.jpg",
-      seuil: 10,
+      logo: "icones/managers/mel.png",
+      seuil: 1000,
       idcible: 1,
       ratio: 0,
       typeratio: "gain",
@@ -246,8 +246,8 @@ module.exports = {
     },
     {
       name: "Gang de bigoudens",
-      logo: "icones/managers/bigouden.jpg",
-      seuil: 10,
+      logo: "icones/managers/bigouden.png",
+      seuil: 15000,
       idcible: 2,
       ratio: 0,
       typeratio: "gain",
@@ -255,8 +255,8 @@ module.exports = {
     },
     {
       name: "Jean-Jacques Hennaf",
-      logo: "icones/managers/jjh.jpg",
-      seuil: 10,
+      logo: "icones/managers/jjh.png",
+      seuil: 100000,
       idcible: 3,
       ratio: 0,
       typeratio: "gain",
@@ -264,8 +264,8 @@ module.exports = {
     },
     {
       name: "Guy Cotten",
-      logo: "icones/managers/guy.jpg",
-      seuil: 10,
+      logo: "icones/managers/guy.png",
+      seuil: 500000,
       idcible: 4,
       ratio: 0,
       typeratio: "gain",
@@ -273,8 +273,8 @@ module.exports = {
     },
     {
       name: "Olivier de Kersauson",
-      logo: "icones/managers/odk.jpg",
-      seuil: 10,
+      logo: "icones/managers/odk.png",
+      seuil: 1200000,
       idcible: 5,
       ratio: 0,
       typeratio: "gain",
@@ -282,8 +282,8 @@ module.exports = {
     },
     {
       name: "Denis Le Saint",
-      logo: "icones/managers/dls.jpg",
-      seuil: 10,
+      logo: "icones/managers/dls.png",
+      seuil: 10000000,
       idcible: 6,
       ratio: 0,
       typeratio: "gain",
