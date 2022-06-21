@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import React from "react";
-// import { Product } from "./world";
 import "./App.css";
-import { World, Product } from "./world";
+import { Product } from "./world";
 import MyProgressbar from "./MyProgressBar";
 
 type ProductProps = {
