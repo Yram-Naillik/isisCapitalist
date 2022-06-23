@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import "./ProductComponent";
 import ProductComponent from "./ProductComponent";
@@ -15,6 +15,16 @@ type MainProps = {
 };
 
 export default function Main({ loadworld, username }: MainProps) {
+  function onProductionDone(p: Product) {
+    let gain = 5;
+
+    addToScore(gain);
+  }
+
+  function addToScore(gain: number) {
+    score = score + gain;
+  }
+
   const [world, setWorld] = useState(
     JSON.parse(JSON.stringify(loadworld)) as World
   );
@@ -242,6 +252,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[0]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
                 <div>
@@ -249,6 +260,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[1]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
                 <div>
@@ -256,6 +268,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[2]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
               </div>
@@ -265,6 +278,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[3]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
                 <div>
@@ -272,6 +286,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[4]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
                 <div>
@@ -279,6 +294,7 @@ export default function Main({ loadworld, username }: MainProps) {
                     prod={world.products[5]}
                     qtMultiplicator={qtMultiplicator}
                     money={world.money}
+                    onProductionDone={onProductionDone}
                   />
                 </div>
               </div>

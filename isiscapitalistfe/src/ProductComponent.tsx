@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import { Product } from "./world";
 import MyProgressbar from "./MyProgressBar";
@@ -7,13 +7,41 @@ type ProductProps = {
   prod: Product;
   qtMultiplicator: String;
   money: number;
+  onProductionDone: (product: Product) => void;
 };
 
 export default function ProductComponent({
   prod,
+  onProductionDone,
   qtMultiplicator,
   money,
 }: ProductProps) {
+  if (!prod.lastupdate) {
+    prod.lastupdate = Date.now();
+  }
+
+  function calcScore() {
+    let elapsedTime = Date.now() - prod.lastupdate;
+    prod.lastupdate = Date.now();
+    prod.timeleft = prod.timeleft - elapsedTime;
+
+    if (product.timeleft <= 0) {
+      console.log("FINITO");
+      prod.timeleft = 0;
+    } else {
+      console.log(prod.timeleft);
+    }
+    onProductionDone(product);
+  }
+
+  const savedCallback = useRef(calcScore);
+  useEffect(() => (savedCallback.current = calcScore));
+  useEffect(() => {
+    let timer = setInterval(() => savedCallback.current(), 5000);
+    return function cleanup() {
+      if (timer) clearInterval(timer);
+    };
+  }, []);
   const [product, setProduct] = useState(
     JSON.parse(JSON.stringify(prod)) as Product
   );
@@ -37,7 +65,6 @@ export default function ProductComponent({
       buyPrice = initialCost * ((1 - Math.pow(q, nMax)) / (1 - q));
       qtMultiplicatorDisplay = nMax.toString();
     } else {
-      console.log("else");
       let multiplicatorToNumber = Number(qtMultiplicator);
       let q = prod.croissance;
       let initialCost = prod.cout;
@@ -49,6 +76,8 @@ export default function ProductComponent({
 
   function startFabrication() {
     setBarIsRunning(true);
+    product.timeleft = product.vitesse;
+    prod.lastupdate = Date.now();
   }
 
   function onProgressbarCompleted() {
@@ -79,7 +108,7 @@ export default function ProductComponent({
             frontcolor="green"
             backcolor="yellow"
             className="barstyle"
-            vitesse={6000}
+            vitesse={prod.vitesse}
             initialvalue={0}
             run={barIsRunning}
             auto={product.managerUnlocked}
