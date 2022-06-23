@@ -232,11 +232,14 @@ button div {
 }
 
 .managersComponent {
+  border: 2px solid gray;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 15px;
+  padding-right: 2px;
 }
 
 .modalTitle {
@@ -248,4 +251,20 @@ button div {
 .managersList {
   display: flex;
   flex-direction: row;
+}
+
+.managerName {
+  font-size: 1.5em;
+  padding-right: 30px;
+}
+
+.hirebutton {
+  padding-right: 5px;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.managerText{
+  text-align: center;
+  padding-top: 1px;
 }
